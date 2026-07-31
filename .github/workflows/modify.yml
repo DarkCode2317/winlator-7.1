@@ -14,11 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout Winlator 1.11
+      - name: Checkout Winlator-App
         uses: actions/checkout@v4
         with:
-        repository: DarkCode2317/winlator-app
-        path: winlator-app
+          repository: DarkCode2317/winlator-app
+          path: winlator-app
 
       - name: Copy gradle
         run: |
