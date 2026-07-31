@@ -11,18 +11,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Delete files
+      - name: Checkout Winlator 1.11
+        uses: actions/checkout@v4
+        with:
+        repository: DarkCode2317/winlator-app
+        path: winlator-app
+
+      - name: Copy gradle
         run: |
-          rm -rf a1
+          copy -r winlator/gradle .
+          copy winlator/gradlew .
+          copy winlator/settings.gradle .
 
       - name: Commit
         run: |
           git config user.name "DarkCode2317"
           git config user.email "darkcode2317@gmail.com"
           git add .
-          git commit -m "Delete files"
+          git commit -m "Modify repo"
           git push
         
