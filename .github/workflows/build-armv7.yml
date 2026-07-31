@@ -29,13 +29,13 @@ jobs:
                      "ndk;22.1.7171670" \
                      "cmake;3.22.1"
 
-      - name: Build Release APK (armeabi-v7a)
+      - name: Build Debug APK (armeabi-v7a)
         run: |
           chmod +x gradlew
-          ./gradlew clean assembleRelease
+          ./gradlew clean assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Winlator-7.1-armv7-release
-          path: app/build/outputs/apk/release/*.apk
+          name: Winlator-7.1-armv7-debug
+          path: app/build/outputs/apk/debug/*.apk
