@@ -11,8 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout vanilla
         uses: actions/checkout@v4
+        with:
+          repository: ewt45/winlator-fork
+          ref: vanilla
+          path: .
 
       - name: Checkout Winlator-App
         uses: actions/checkout@v4
@@ -28,6 +32,10 @@ jobs:
           cp winlator/settings.gradle .
           cp winlator/gradle.properties .
           rm -rf winlator
+
+      - name: Restore origin
+        run: |
+          git remote set-url origin https://github.com/DarkCode2317/winlator-7.1.git
 
       - name: Commit
         run: |
