@@ -27,6 +27,7 @@ jobs:
           cp winlator/build.gradle .
           cp winlator/settings.gradle .
           cp winlator/gradle.properties .
+          rm -rf winlator
 
       - name: Commit
         run: |
@@ -34,4 +35,4 @@ jobs:
           git config user.email "darkcode2317@gmail.com"
           git add .
           git commit -m "Modify repo"
-          git push origin HEAD:vanilla
+          git push origin HEAD:vanilla --force
