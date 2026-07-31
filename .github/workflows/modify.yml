@@ -22,11 +22,11 @@ jobs:
 
       - name: Copy gradle
         run: |
-          copy -r winlator/gradle .
-          copy winlator/gradlew .
-          copy winlator/build.gradle .
-          copy winlator/settings.gradle .
-          copy winlator/gradle.properties .
+          cp -r winlator/gradle .
+          cp winlator/gradlew .
+          cp winlator/build.gradle .
+          cp winlator/settings.gradle .
+          cp winlator/gradle.properties .
 
       - name: Commit
         run: |
